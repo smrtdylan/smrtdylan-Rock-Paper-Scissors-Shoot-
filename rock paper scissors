@@ -1,0 +1,48 @@
+i = 0
+play = input('Wanna play Rock, Paper, Scissors against a AI 5 times? (YES or NO) ').upper()
+while i < 5 and play == 'YES':
+        import random
+        #ai generator works!!!!
+        ai_list = ['ROCK', 'PAPER', 'SCISSORS']
+        random_index = random.randint(0,len(ai_list)-1)
+
+        #what does the person on the other side of the screen pick?
+        human = input('ROCK, PAPER, or SCISSORS? ').upper()
+
+        print('AI picks ' + ai_list[random_index])
+
+
+        #human loses and ai wins
+        loss = 'You lose :('
+        win = 'You win!'
+        tie = 'You tied with the AI!'
+        if human == 'ROCK' and ai_list[random_index] == 'PAPER':
+            print(str(loss))
+        elif human == 'PAPER' and ai_list[random_index] == 'SCISSORS':
+            print(str(loss))
+        elif human == 'SCISSORS' and ai_list[random_index] == 'ROCK':
+            print(str(loss))
+
+
+        #human wins and ai loses
+        if human == 'ROCK' and ai_list[random_index] == 'SCISSORS':
+            print(str(win))
+        elif human == 'PAPER' and ai_list[random_index] == 'ROCK':
+            print(str(win))
+        elif human == 'SCISSORS' and ai_list[random_index] == 'PAPER':
+            print(str(win))
+
+
+        #we tie
+        if human == 'ROCK' and ai_list[random_index] == 'ROCK':
+            print(tie)
+        elif human == 'PAPER' and ai_list[random_index] == 'PAPER':
+            print(tie)
+        elif human == 'SCISSORS' and ai_list[random_index] == 'SCISSORS':
+            print(tie)
+
+        i = i+1
+
+        if i == 5:
+            print('Thanks for playing! Reload if you want to play again!')
+            break
